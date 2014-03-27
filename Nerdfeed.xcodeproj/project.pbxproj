@@ -20,6 +20,7 @@
 		D0FD210D18E4A01E0091186D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D0FD210B18E4A01E0091186D /* InfoPlist.strings */; };
 		D0FD210F18E4A01E0091186D /* NerdfeedTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FD210E18E4A01E0091186D /* NerdfeedTests.m */; };
 		D0FD211A18E4A0420091186D /* BNRCoursesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FD211918E4A0420091186D /* BNRCoursesViewController.m */; };
+		D0FD211D18E4A7760091186D /* BNRWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FD211C18E4A7760091186D /* BNRWebViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		D0FD210E18E4A01E0091186D /* NerdfeedTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NerdfeedTests.m; sourceTree = "<group>"; };
 		D0FD211818E4A0420091186D /* BNRCoursesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRCoursesViewController.h; sourceTree = "<group>"; };
 		D0FD211918E4A0420091186D /* BNRCoursesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRCoursesViewController.m; sourceTree = "<group>"; };
+		D0FD211B18E4A7760091186D /* BNRWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRWebViewController.h; sourceTree = "<group>"; };
+		D0FD211C18E4A7760091186D /* BNRWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRWebViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +83,8 @@
 		D0FD20DD18E4A01E0091186D = {
 			isa = PBXGroup;
 			children = (
+				D0FD211B18E4A7760091186D /* BNRWebViewController.h */,
+				D0FD211C18E4A7760091186D /* BNRWebViewController.m */,
 				D0FD211818E4A0420091186D /* BNRCoursesViewController.h */,
 				D0FD211918E4A0420091186D /* BNRCoursesViewController.m */,
 				D0FD20EF18E4A01E0091186D /* Nerdfeed */,
@@ -245,6 +250,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0FD211D18E4A7760091186D /* BNRWebViewController.m in Sources */,
 				D0FD20F618E4A01E0091186D /* main.m in Sources */,
 				D0FD20FA18E4A01E0091186D /* BNRAppDelegate.m in Sources */,
 				D0FD211A18E4A0420091186D /* BNRCoursesViewController.m in Sources */,
@@ -370,6 +376,7 @@
 				GCC_PREFIX_HEADER = "Nerdfeed/Nerdfeed-Prefix.pch";
 				INFOPLIST_FILE = "Nerdfeed/Nerdfeed-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -383,6 +390,7 @@
 				GCC_PREFIX_HEADER = "Nerdfeed/Nerdfeed-Prefix.pch";
 				INFOPLIST_FILE = "Nerdfeed/Nerdfeed-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -446,6 +454,7 @@
 				D0FD211418E4A01E0091186D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D0FD211518E4A01E0091186D /* Build configuration list for PBXNativeTarget "NerdfeedTests" */ = {
 			isa = XCConfigurationList;
@@ -454,6 +463,7 @@
 				D0FD211718E4A01E0091186D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

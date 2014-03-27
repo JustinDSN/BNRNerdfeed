@@ -7,8 +7,9 @@
 //
 
 #import "BNRCoursesViewController.h"
+#import "BNRWebViewController.h"
 
-@interface BNRCoursesViewController ()
+@interface BNRCoursesViewController () <NSURLSessionDataDelegate>
 
 @property (nonatomic, strong) NSURLSession *session;
 @property (nonatomic, copy) NSArray *courses;
@@ -27,7 +28,7 @@
         
         NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
         _session = [NSURLSession sessionWithConfiguration:config
-                                                 delegate:nil
+                                                 delegate:self
                                             delegateQueue:nil];
         
         [self fetchFeed];
@@ -45,7 +46,7 @@
 
 #pragma mark Web Service Methods
 - (void)fetchFeed {
-    NSString *requestString = @"http://bookapi.bignerdranch.com/courses.json";
+    NSString *requestString = @"https://bookapi.bignerdranch.com/private/courses.json";
     NSURL *url = [[NSURL alloc] initWithString:requestString];
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
     
@@ -78,6 +79,29 @@
     cell.textLabel.text = course[@"title"];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSDictionary *course = self.courses[indexPath.row];
+    NSURL *URL = [NSURL URLWithString:course[@"url"]];
+    
+    self.webViewController.title = course[@"title"];
+    self.webViewController.URL = URL;
+    if (!self.splitViewController) {
+        [self.navigationController pushViewController:self.webViewController animated:YES];
+    }
+}
+
+#pragma mark NSURLSessionDataDelegate
+- (void)URLSession:(NSURLSession *)session
+              task:(NSURLSessionTask *)task
+didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge
+ completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition, NSURLCredential *))completionHandler {
+    NSURLCredential *credential = [NSURLCredential credentialWithUser:@"BigNerdRanch"
+                                                             password:@"AchieveNerdvana"
+                                                          persistence:NSURLCredentialPersistenceForSession];
+    
+    completionHandler(NSURLSessionAuthChallengeUseCredential, credential);
 }
 
 @end

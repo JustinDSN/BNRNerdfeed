@@ -8,16 +8,34 @@
 
 #import "BNRAppDelegate.h"
 #import "BNRCoursesViewController.h"
+#import "BNRWebViewController.h"
 
 @implementation BNRAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
+    
     BNRCoursesViewController *coursesViewController = [[BNRCoursesViewController alloc] initWithStyle:UITableViewStylePlain];
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:coursesViewController];
-    self.window.rootViewController = navigationController;
+    
+    UINavigationController *masterNav = [[UINavigationController alloc] initWithRootViewController:coursesViewController];
+    
+    BNRWebViewController *webViewController = [[BNRWebViewController alloc] init];
+    coursesViewController.webViewController = webViewController;
+    
+    if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
+        UINavigationController *detailNav = [[UINavigationController alloc] initWithRootViewController: webViewController];
+        
+        UISplitViewController *splitViewController = [[UISplitViewController alloc] init];
+        splitViewController.delegate = webViewController;
+        
+        splitViewController.viewControllers = @[masterNav, detailNav];
+        
+        self.window.rootViewController = splitViewController;
+    }
+    else {
+        self.window.rootViewController = masterNav;
+    }
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
