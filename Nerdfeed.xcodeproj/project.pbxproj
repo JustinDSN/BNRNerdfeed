@@ -19,6 +19,7 @@
 		D0FD210518E4A01E0091186D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0FD20ED18E4A01E0091186D /* UIKit.framework */; };
 		D0FD210D18E4A01E0091186D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D0FD210B18E4A01E0091186D /* InfoPlist.strings */; };
 		D0FD210F18E4A01E0091186D /* NerdfeedTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FD210E18E4A01E0091186D /* NerdfeedTests.m */; };
+		D0FD211A18E4A0420091186D /* BNRCoursesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FD211918E4A0420091186D /* BNRCoursesViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,8 @@
 		D0FD210A18E4A01E0091186D /* NerdfeedTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NerdfeedTests-Info.plist"; sourceTree = "<group>"; };
 		D0FD210C18E4A01E0091186D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D0FD210E18E4A01E0091186D /* NerdfeedTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NerdfeedTests.m; sourceTree = "<group>"; };
+		D0FD211818E4A0420091186D /* BNRCoursesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRCoursesViewController.h; sourceTree = "<group>"; };
+		D0FD211918E4A0420091186D /* BNRCoursesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRCoursesViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +80,8 @@
 		D0FD20DD18E4A01E0091186D = {
 			isa = PBXGroup;
 			children = (
+				D0FD211818E4A0420091186D /* BNRCoursesViewController.h */,
+				D0FD211918E4A0420091186D /* BNRCoursesViewController.m */,
 				D0FD20EF18E4A01E0091186D /* Nerdfeed */,
 				D0FD210818E4A01E0091186D /* NerdfeedTests */,
 				D0FD20E818E4A01E0091186D /* Frameworks */,
@@ -242,6 +247,7 @@
 			files = (
 				D0FD20F618E4A01E0091186D /* main.m in Sources */,
 				D0FD20FA18E4A01E0091186D /* BNRAppDelegate.m in Sources */,
+				D0FD211A18E4A0420091186D /* BNRCoursesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
